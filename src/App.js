@@ -7,6 +7,7 @@ const API_URL = '/api/fe/wordle-words';
 export default function App(){
 
     const [solution, setSolution] = useState('');
+    const [guesses, setGuesses]  = useState(Array(6).fill(null)); // array of strings of each guess
 
     useEffect(() => {
 
@@ -28,7 +29,18 @@ export default function App(){
 
     return (
         <div className = "App">
-            {solution}
+            {
+                guesses.map(guess => {
+                    return (
+                        <Line/>
+                    )
+                })
+            }
         </div>
     );
+}
+
+
+function Line(){
+    return <div/>
 }
